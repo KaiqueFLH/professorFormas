@@ -1,10 +1,8 @@
-import java.text.Normalizer;
 import java.util.Scanner;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
     public static Professor professorLogado = new Professor("Kaique", "123");
-    public static FormasGeometricas forma = new FormasGeometricas();
 
     public static void main(String[] args) {
         if (login()){
@@ -50,7 +48,7 @@ public class Main {
                 case 1 -> {
                     System.out.println("Digite o Raio:");
                     double raio = sc.nextDouble();
-                    System.out.println(professorLogado.createCircle(raio,forma));
+                    System.out.println(professorLogado.createCircle(raio));
                 }
                 case 2 -> {
                     double lado1, lado2, lado3;
@@ -62,7 +60,7 @@ public class Main {
                         System.out.println("Informe o Valor do Lado 3:");
                         lado3 = sc.nextDouble();
                     }while(lado1>(lado2+lado3) || lado2>(lado1+lado3) || lado3>(lado1+lado2));
-                    System.out.println(professorLogado.createTriangle(lado1,lado2,lado3,forma));
+                    System.out.println(professorLogado.createTriangle(lado1,lado2,lado3));
                 }
                 case 3 -> {
                     double comprimento, altura;
@@ -73,12 +71,12 @@ public class Main {
                         altura = sc.nextDouble();
 
                     } while (comprimento <= 0 && altura <= 0 && altura != comprimento);
-                    System.out.println(professorLogado.createRetangle(comprimento,altura,forma));
+                    System.out.println(professorLogado.createRetangle(comprimento,altura));
                 }
                 case 4 -> {
                     System.out.println("Informe o Valor do Lado do seu Quadrado: ");
                     double lado = sc.nextDouble();
-                    System.out.println(professorLogado.createSquare(lado,forma));
+                    System.out.println(professorLogado.createSquare(lado));
                 }
                 case 5 -> listarFormas();
             }
@@ -99,18 +97,18 @@ public class Main {
 
         switch (opcao) {
             case 1 -> {
-                Circulo.listarCirculos();
+                Forma.listarCirculos();
 
             }
             case 2 -> {
-                Equilatero.listarEquilatero();
-                Isosceles.ListarIsosceles();
-                Escaleno.listarEscaleno();
+                Forma.listarEquilatero();
+                Forma.ListarIsosceles();
+                Forma.listarEscaleno();
             }
-            case 3 -> Retangulo.listarRetangulo();
-            case 4 -> Quadrado.listarQuadrado();
-            case 5 -> FormasGeometricas.listarTudo();
-            case 6 -> System.out.println("Você selecionou Voltar para o Menu!");
+            case 3 -> Forma.listarRetangulo();
+            case 4 -> Forma.listarQuadrado();
+            case 5 -> Forma.listarTudo();
+            case 6 -> System.out.println("Você selecionou voltar para o Menu!");
         }
     }
 }

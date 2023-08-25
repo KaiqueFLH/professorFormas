@@ -1,4 +1,4 @@
-public class Quadrado extends FormasGeometricas{
+public class Quadrado extends Forma {
     double lado;
 
     public Quadrado(double lado, int qtdLados){
@@ -6,11 +6,13 @@ public class Quadrado extends FormasGeometricas{
         this.lado = lado;
     }
 
+    @Override
     public double calcArea(){
         area=Math.pow(lado,2);
         return area;
     }
 
+    @Override
     public double calcPerimetro(){
         perimetro = lado*4;
         return perimetro;
@@ -25,14 +27,6 @@ public class Quadrado extends FormasGeometricas{
                 '}';
     }
 
-    public static void listarQuadrado(){
-        if (listaFormas!=null){
-            for (FormasGeometricas eqFor: listaFormas) {
-                if (eqFor instanceof Quadrado){
-                    System.out.println(eqFor+"\n====================================");
-                }
-            }
-        }
-    }
+
 
 }

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Professor {
     String nome;
     String senha;
@@ -11,13 +9,13 @@ public class Professor {
     }
 
 
-    public String createCircle(double raio,FormasGeometricas forma){
+    public String createCircle(double raio){
         Circulo circuloLog = new Circulo(raio,raio*2);
-        FormasGeometricas.listaFormas.add(circuloLog);
+        Forma.listaFormas.add(circuloLog);
         return "Círculo Criado!";
     }
 
-    public String createTriangle(double lado1, double lado2, double lado3,FormasGeometricas forma){
+    public String createTriangle(double lado1, double lado2, double lado3){
             double ladoMaior,ladoMenor;
 
             if (lado1>lado2 && lado2>lado3 || lado1>lado3 && lado3>lado2){
@@ -37,15 +35,15 @@ public class Professor {
 
                 if (lado1==lado2 && lado2==lado3){
                     Equilatero trianguloEquilatero = new Equilatero(lado1,lado2,lado3);
-                    FormasGeometricas.listaFormas.add(trianguloEquilatero);
+                    Forma.listaFormas.add(trianguloEquilatero);
                 }
                 else if (lado1!=lado2 && lado2==lado3 || lado1==lado2 && lado2!=lado3 || lado1==lado3 && lado3!=lado2){
                     Isosceles trianguloIsosceles = new Isosceles(lado1, lado2, lado3);
-                    FormasGeometricas.listaFormas.add(trianguloIsosceles);
+                    Forma.listaFormas.add(trianguloIsosceles);
                 }
                 else if (lado1!=lado2 && lado2!=lado3){
                     Escaleno trianguloEscaleno = new Escaleno(lado1, lado2, lado3);
-                    FormasGeometricas.listaFormas.add(trianguloEscaleno);
+                    Forma.listaFormas.add(trianguloEscaleno);
                 }
                 return "Triângulo Criado!";
             }
@@ -56,7 +54,7 @@ public class Professor {
             //FormasGeometricas.listaFormas.add(Triangulo.listaTriangulos);
     }
 
-    public String createRetangle(double comprimento, double altura,FormasGeometricas forma){
+    public String createRetangle(double comprimento, double altura){
             if (altura > 0 && altura == comprimento){
                 return "A Forma Geométrica que você está criando não é um Retângulo, mas sim um quadrado pois os lados são iguais.";
             }
@@ -65,14 +63,14 @@ public class Professor {
             }
             else {
                 Retangulo retanguloLog = new Retangulo(comprimento, altura, 4);
-                FormasGeometricas.listaFormas.add(retanguloLog);
+                Forma.listaFormas.add(retanguloLog);
                 return "Retângulo Criado!";
             }
     }
 
-    public String createSquare(double lado,FormasGeometricas forma){
+    public String createSquare(double lado){
         Quadrado quadradoLog = new Quadrado(lado, 4);
-        FormasGeometricas.listaFormas.add(quadradoLog);
+        Forma.listaFormas.add(quadradoLog);
         return "Quadrado Criado!";
     }
 

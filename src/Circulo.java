@@ -1,4 +1,4 @@
-public class Circulo extends FormasGeometricas{
+public class Circulo extends Forma {
      double raio;
      double diametro;
 
@@ -8,6 +8,7 @@ public class Circulo extends FormasGeometricas{
         this.raio=diametro/2;
     }
 
+    @Override
     public double calcArea(){
         double pi = Math.PI;
         area = pi*(raio*raio);
@@ -15,6 +16,7 @@ public class Circulo extends FormasGeometricas{
         return area;
     }
 
+    @Override
     public double calcPerimetro(){
         double pi = Math.PI;
         perimetro= pi*2*raio;
@@ -30,15 +32,5 @@ public class Circulo extends FormasGeometricas{
                 ", Area=" + calcArea() +
                 ", Perimetro=" + calcPerimetro() +
                 '}';
-    }
-
-    public static void listarCirculos(){
-        if (listaFormas!=null){
-            for (FormasGeometricas eqFor: listaFormas) {
-                if (eqFor instanceof Circulo){
-                    System.out.println(eqFor+"\n====================================");
-                }
-            }
-        }
     }
 }

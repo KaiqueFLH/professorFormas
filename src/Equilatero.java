@@ -11,12 +11,6 @@ public class Equilatero extends Triangulo {
     }
 
     @Override
-    public double calcPerimetro() {
-        perimetro = 3 * lado1;
-        return perimetro;
-    }
-
-    @Override
     public String toString() {
         return "Equilatero{" +
                 "lado1=" + lado1 +
@@ -25,15 +19,5 @@ public class Equilatero extends Triangulo {
                 ", Area=" + calcArea() +
                 ", Perimetro=" + calcPerimetro() +
                 '}';
-    }
-
-    public static void listarEquilatero(){
-        if (listaFormas!=null){
-            for (FormasGeometricas eqFor: listaFormas) {
-                if (eqFor instanceof Equilatero){
-                    System.out.println(eqFor+"\n====================================");
-                }
-            }
-        }
     }
 }

@@ -1,5 +1,5 @@
 
-public abstract class Triangulo extends FormasGeometricas{
+public abstract class Triangulo extends Forma {
 
     double lado1;
     double lado2;
@@ -13,10 +13,10 @@ public abstract class Triangulo extends FormasGeometricas{
 
     }
 
-    public abstract double calcArea();
-
-    public abstract double calcPerimetro();
-
+    @Override
+    public double calcPerimetro() {
+        return perimetro = lado1 + lado2 + lado3;
+    }
 
     //static ArrayList<Triangulo> listaTriangulos = new ArrayList<>();
 

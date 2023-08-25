@@ -1,4 +1,4 @@
-public class Retangulo extends FormasGeometricas{
+public class Retangulo extends Forma {
     double comprimento;
     double altura;
 
@@ -8,10 +8,13 @@ public class Retangulo extends FormasGeometricas{
         this.altura = altura;
     }
 
+    @Override
     public double calcArea(){
         area=comprimento*altura;
         return area;
     }
+
+    @Override
     public double calcPerimetro(){
         perimetro= 2*(comprimento+altura);
         return perimetro;
@@ -25,15 +28,5 @@ public class Retangulo extends FormasGeometricas{
                 ", Area=" + calcArea() +
                 ", Perimetro=" + calcPerimetro() +
                 '}';
-    }
-
-    public static void listarRetangulo(){
-        if (listaFormas!=null){
-            for (FormasGeometricas eqFor: listaFormas) {
-                if (eqFor instanceof Retangulo){
-                    System.out.println(eqFor+"\n====================================");
-                }
-            }
-        }
     }
 }

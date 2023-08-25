@@ -11,11 +11,6 @@ public class Escaleno extends Triangulo {
     }
 
     @Override
-    public double calcPerimetro() {
-        return perimetro = lado1 + lado2 + lado3;
-    }
-
-    @Override
     public String toString() {
         return "Escaleno{" +
                 "lado1=" + lado1 +
@@ -24,15 +19,5 @@ public class Escaleno extends Triangulo {
                 ", Area=" + calcArea() +
                 ", Perimetro=" + calcPerimetro() +
                 '}';
-    }
-
-    public static void listarEscaleno(){
-        if (listaFormas!=null){
-            for (FormasGeometricas eqFor: listaFormas) {
-                if (eqFor instanceof Escaleno){
-                    System.out.println(eqFor+"\n====================================");
-                }
-            }
-        }
     }
 }

@@ -31,23 +31,6 @@ public class Isosceles extends Triangulo {
     }
 
     @Override
-    public double calcPerimetro() {
-        double ladoDiferente = 0, ladoIgual = 0;
-        if (lado1 != lado2 && lado2 == lado3) {
-            ladoDiferente = lado1;
-            ladoIgual = lado3;
-        } else if (lado1 != lado2 && lado1 == lado3) {
-            ladoDiferente = lado2;
-            ladoIgual = lado3;
-        } else if (lado1 == lado2 && lado2 != lado3) {
-            ladoDiferente = lado3;
-            ladoIgual = lado1;
-        }
-        perimetro = ladoDiferente + (2 * ladoIgual);
-        return perimetro;
-    }
-
-    @Override
     public String toString() {
         return "Isosceles{" +
                 "lado1=" + lado1 +
@@ -58,13 +41,5 @@ public class Isosceles extends Triangulo {
                 '}';
     }
 
-    public static void ListarIsosceles(){
-        if (listaFormas!=null){
-            for (FormasGeometricas eqFor: listaFormas) {
-                if (eqFor instanceof Isosceles){
-                    System.out.println(eqFor+"\n====================================");
-                }
-            }
-        }
-    }
+
 }
